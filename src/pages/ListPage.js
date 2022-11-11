@@ -15,16 +15,28 @@ const StyledItemBoxDiv = styled.div`
 const ListPage = () => {
   // 최초 데이터
   const [posts, setPosts] = useState([
-    { id: 1, title: "내용1" },
-    { id: 2, title: "내용2" },
-    { id: 3, title: "내용3" },
-    { id: 4, title: "내용4" },
-    { id: 5, title: "내용5" },
+    { id: 1, title: "제목1", content:"내용1" },
+    { id: 2, title: "제목2", content:"내용2" },
+    { id: 3, title: "제목3", content:"내용3" },
+    { id: 4, title: "제목4", content:"내용4" },
+    { id: 5, title: "제목5", content:"내용5" },
   ]);
+
+  const handleWrite = {
+    // ListPage의 setPosts에 무엇을 담아야할까?
+    //let posts = { id: 6, title: "인풋값" };
+    //setPosts();
+  };
 
   return (
     <div>
       <h1>글목록 페이지</h1>
+      <form>
+        <input type="text" placeholder="제목을 입력하세요.." />
+        <button type="button" onClick={handleWrite}>
+          글쓰기
+        </button>
+      </form>
       <hr />
       {posts.map((posts) => (
         <StyledItemBoxDiv>
